@@ -41,7 +41,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
    
    # 2. for POST, PUT, DELETE routes for all users:
    
-    ![18-nosql-homework-demo-03](https://user-images.githubusercontent.com/108309963/202740027-cfb555cd-6cf9-421a-a0e0-b32f1b74f448.gif)
+   ![18-nosql-homework-demo-03](https://user-images.githubusercontent.com/108309963/202740763-e7a8292e-3eec-4c46-af8b-ae52bab3733d.gif)
     
 # D) Walk-through video demonstrating the functionality of the App:
 
