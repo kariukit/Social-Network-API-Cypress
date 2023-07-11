@@ -1,1 +1,1 @@
-# Social-network-Network-API-Cypress
+# Social-Network-API-Cypress
