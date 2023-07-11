@@ -15,10 +15,10 @@ const usersController = {
     getAllUsers(req, res) {
         Users.find({})
         // populate users thoughts
-        .populate({path: 'thoughts', select: '-__v'})
+        .populate({path: 'thoughts'})
         // populate user friends
-        .populate({path: 'friends', select: '-__v'})
-        .select('-__v')
+        .populate({path: 'friends'})
+       // .select('-__v')
         // .sort({_id: -1})
         .then(dbUsersData => res.json(dbUsersData))
         .catch(err => {
@@ -71,7 +71,19 @@ const usersController = {
         })
         .catch(err => res.status(400).json(err));
     },
+      // Create friends for users
+    addFriend({params, body}, res) {
+        Users.findOneAndUpdate({_id: params.id}, {$addToSet: {friends: req.params.friendId}}, {new: true, runValidators: true})
+        .then(dbUsersData => {
+        if (!dbUsersData) {
+            res.status(404).json({message: 'Unable to add friend!'});
+            return;
+        }
+        res.json(dbUsersData);
+        })
+        .catch(err => res.status(400).json(err))
 
+    },
     // Delete a current user by ID
     addFriend({params}, res) {
         Users.findOneAndUpdate({_id: params.id}, {$push: { friends: params.friendId}}, {new: true})

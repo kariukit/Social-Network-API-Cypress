@@ -18,8 +18,11 @@ router.route('/').get(getAllUsers).post(createUsers);
 // -- Directs to: /api/users/:id <GET, PUT, DELETE>
 router.route('/:id').get(getUsersById).put(updateUsers).delete(deleteUsers);
 
+// -- Directs to: /api/user/:userId/friends <POST>
+router.route('/:id/friends').post(addFriend);
+
 // -- Directs to: /api/users/:userId/friends/:friendId <POST, DELETE>
-router.route('/:id/friends/:friendId').post(addFriend).delete(deleteFriend)
+router.route('/:id/friends/:friendId').post(addFriend).delete(deleteFriend);
 
 // Module export router
 module.exports = router; 
