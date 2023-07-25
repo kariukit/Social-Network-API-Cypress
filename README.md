@@ -1,4 +1,4 @@
-# Social-Network-API
+# Social-Network-API-Cypress
 
 In this project, I used a pre-existing  API for a social network web application project and perform some  End to End automation Tests using Cypress.io. The Tests done in this project were HTTP Requests and Query Parameters Tests. 1The API used Express.js for routing, a MongoDB database, and the Mongoose ODM. 
 
